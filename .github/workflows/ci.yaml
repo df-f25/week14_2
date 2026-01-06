@@ -53,9 +53,5 @@ jobs:
         run: docker container run -d -p 2222:80 ${{secrets.DHUB_USER}}/app:latest
       - name: List The Running Containers
         run: docker container ls
-      # - name: Push Docker Image on the Dockerhub Registery
-      #   run: docker push ${{secrets.DHUB_USER}}/app:latest
-      # - name: Stop The Running Containers
-      #   run: docker container stop $(docker container ls)
-      # - name: Kill all the unsed resoruces at Runner
-      #   run: docker system prune -a --volumes
+      - name: Push Docker Image on the Dockerhub Registery
+        run: docker push ${{secrets.DHUB_USER}}/app:latest
