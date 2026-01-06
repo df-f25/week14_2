@@ -46,12 +46,12 @@ jobs:
           username: ${{secrets.DHUB_USER}}
           password: ${{secrets.DHUB_TOKEN}}
       - name: Build Website Image
-        run: docker image build -t ${{secrets.DHUB_USER}}/app:latest .
+        run: docker image build -t ${{secrets.DHUB_USER}}/app:develop .
       - name: List the Available Images on Runner
         run: ls
       - name: Create and Rocker image un Container from New Image
-        run: docker container run -d -p 2222:80 ${{secrets.DHUB_USER}}/app:latest
+        run: docker container run -d -p 2222:80 ${{secrets.DHUB_USER}}/app:develop
       - name: List The Running Containers
         run: docker container ls
       - name: Push Docker Image on the Dockerhub Registery
-        run: docker push ${{secrets.DHUB_USER}}/app:latest
+        run: docker push ${{secrets.DHUB_USER}}/app:develop
