@@ -22,5 +22,4 @@ jobs:
       # - name: Push Image On Docker Hub
       #   run: docker push ${{secrets.DHUB_USER}}/w14:latest
       - name: Ask Render.com To Peform the New Deployment
-        run: curl -X POST ${{secrets.RENDER_WEBHOOK_DEVELOP}}
-      
+        run: curl -X POST ${{secrets.RENDER_WEBHOOK_DEVELOP}}    
